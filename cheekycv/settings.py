@@ -128,9 +128,11 @@ STATIC_URL = '/static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 #--------------------------------------------------------------------
-# DISABLE_COLLECTSTATIC = 1
+DISABLE_COLLECTSTATIC = 1
 
-# STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+
+django_heroku.settings(locals())
 
 EMAIL_BACKEND = config('EMAIL_BACKEND')
 EMAIL_HOST = config('EMAIL_HOST')
@@ -151,4 +153,3 @@ DEFAULT_FROM_EMAIL = config('DEFAULT_FROM_EMAIL')
 # LOGIN_REDIRECT_URL = 'home'
 # LOGOUT_REDIRECT_URL = 'home'
 
-# django_heroku.settings(locals())
